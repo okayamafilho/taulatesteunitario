@@ -16,7 +16,6 @@ class UsuarioRepositoryImplTest {
     @Before
     fun setUp() {
         usuarioRepository = UsuarioRepositoryImpl()
-
     }
 
     @Test
