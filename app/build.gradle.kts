@@ -54,7 +54,7 @@ dependencies {
     testImplementation (libs.truth)
 
     //Coroutine teste
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0-RC")
+    testImplementation (libs.kotlinx.coroutines.test)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
