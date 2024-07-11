@@ -1,6 +1,6 @@
 import br.com.okayamafilho.taulatesteunitario.data.model.Usuario
 
 interface UsuarioRepository {
-    fun salvar( usuario: Usuario): Boolean
-    fun listar(): List<Usuario>
+    suspend fun salvar( usuario: Usuario): Boolean
+    suspend fun listar(): List<Usuario>
 }

@@ -1,13 +1,15 @@
 import br.com.okayamafilho.taulatesteunitario.data.model.Usuario
+import kotlinx.coroutines.delay
 
 class UsuarioRepositoryImpl : UsuarioRepository {
 
-    override fun salvar(usuario: Usuario): Boolean {
+    override suspend fun salvar(usuario: Usuario): Boolean {
         //códigos
+        delay(2000)
         return true
     }
 
-    override fun listar(): List<Usuario> {
+    override suspend fun listar(): List<Usuario> {
         return listOf(
             Usuario("Toshi", "toshi@gmail.com"),
             Usuario("Maria", "maria@gmail.com"),

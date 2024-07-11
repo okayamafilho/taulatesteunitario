@@ -3,6 +3,7 @@ package br.com.okayamafilho.taulatesteunitario.data.repository
 import UsuarioRepository
 import UsuarioRepositoryImpl
 import br.com.okayamafilho.taulatesteunitario.data.model.Usuario
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 
 import org.junit.After
@@ -20,7 +21,7 @@ class UsuarioRepositoryImplTest {
 
     @Test
     fun salvar_dadosUsuarioAPI_retornaVerdadeiro() {
-
+        runBlocking {
         //dado
         val usuario = Usuario("teste", "teste@gmail.com")
         //quando
@@ -29,19 +30,21 @@ class UsuarioRepositoryImplTest {
         //Entao
         assertTrue(retorno)
         //teste novo
-
+        }
     }
 
     @Test
     fun listar_temItensAPI_retornaVerdadeiro() {
 
-        //dado
-        val usuario = Usuario("teste", "teste@gmail.com")
-        //quando
-        val listaItens = usuarioRepository.listar()
+        runBlocking {
+            //dado
+            val usuario = Usuario("teste", "teste@gmail.com")
+            //quando
+            val listaItens = usuarioRepository.listar()
 
-        //Entao
-        assertTrue(listaItens.isNotEmpty())
+            //Entao
+            assertTrue(listaItens.isNotEmpty())
+        }
     }
 
     @After
