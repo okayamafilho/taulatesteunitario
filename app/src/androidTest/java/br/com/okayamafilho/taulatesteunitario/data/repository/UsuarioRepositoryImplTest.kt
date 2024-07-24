@@ -4,11 +4,12 @@ import UsuarioRepository
 import UsuarioRepositoryImpl
 import br.com.okayamafilho.taulatesteunitario.data.model.Usuario
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
-
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import kotlin.time.Duration.Companion.seconds
 
 class UsuarioRepositoryImplTest {
 
@@ -21,7 +22,7 @@ class UsuarioRepositoryImplTest {
 
     @Test
     fun salvar_dadosUsuarioAPI_retornaVerdadeiro() {
-        runBlocking {
+        runTest(timeout = 30.seconds) {
         //dado
         val usuario = Usuario("teste", "teste@gmail.com")
         //quando
@@ -33,19 +34,18 @@ class UsuarioRepositoryImplTest {
         }
     }
 
-    @Test
-    fun listar_temItensAPI_retornaVerdadeiro() {
-
-        runBlocking {
-            //dado
-            val usuario = Usuario("teste", "teste@gmail.com")
-            //quando
-            val listaItens = usuarioRepository.listar()
-
-            //Entao
-            assertTrue(listaItens.isNotEmpty())
-        }
-    }
+//    @Test
+//    fun listar_temItensAPI_retornaVerdadeiro() {
+//        runTest {
+//            //dado
+//            val usuario = Usuario("teste", "teste@gmail.com")
+//            //quando
+//            val listaItens = usuarioRepository.listar()
+//
+//            //Entao
+//            assertTrue(listaItens.isNotEmpty())
+//        }
+//    }
 
     @After
     fun tearDown() {

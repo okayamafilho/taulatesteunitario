@@ -44,19 +44,21 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     testImplementation(libs.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
     testImplementation(libs.junit.jupiter)
-    testImplementation(libs.junit.junit)
     testImplementation (libs.truth)
-
-    //Coroutine teste
-    testImplementation (libs.kotlinx.coroutines.test)
-
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    testImplementation(project(":app"))
+    androidTestImplementation (libs.kotlinx.coroutines.test)
+    implementation(libs.kotlinx.coroutines.core)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Mockito
+    testImplementation (libs.mockito.core)
 
 }
